@@ -16,9 +16,14 @@ void setup(){
   error = color(#CE0FC5);
   player = color(#FFAB03);
   
-  for(int i = 0; i < map1.length; i=i+1){ //Make Ground
+  for(int i = 0; i < map1.length; i=i+1){
     for(int o = 0; o < map1.length; o=o+1){
-      map1[i][o] = 0;
+      map1[i][o] = 0; //Make Ground
+      
+      map1[0][o] = 1; //Make Walls Around Map
+      map1[i][0] = 1;
+      map1[44][o] = 1;
+      map1[i][44] = 1;
     }
   }
   
@@ -58,7 +63,7 @@ void GraphicsSystem(){
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      if(map1[playerpos[0]][playerpos[1]-1] == 0){
+      if(map1[playerpos[0]][playerpos[1]-1] == 0 ){
         
         map1[playerpos[0]][playerpos[1]] = 0; 
         playerpos[1] = playerpos[1]-1;
@@ -95,7 +100,10 @@ void debug(){
   text("y : "+playerpos[1],1,22);
   text("FPS: "+frameRate,1,35);
   
-  map1[0][0] = 1;
+  map1[1][2] = 1;
   map1[1][1] = 1; 
   map1[2][2] = 1;
+  map1[3][4] = 1;
+  map1[3][5] = 1;
+  map1[4][6] = 1;
 }
