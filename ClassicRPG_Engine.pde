@@ -55,16 +55,6 @@ void GraphicsSystem(){
 }
 
 
-//boolean CollisonCheck(int x, int y){
-//  for(int i = 0; i < map1.length; i=i+1){
-//      for(int o = 0; o < map1.length; o=o+1){
-//        if(map1[i][o] == 1 && x == i && y == o){
-//          return true; break;
-//        }else{return false; break;}
-//      }
-//  }
-//}
-
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
